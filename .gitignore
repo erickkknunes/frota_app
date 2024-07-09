@@ -1,0 +1,23 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+
+# React Native
+*.log
+*.tmp
+*.swp
+*.swo
+*.vscode/
+
+# Pastas e arquivos de build
+dist/
+build/
+*.bundle.js
+*.map
+*.d.ts
+
+# Outros
+.DS_Store
+Thumbs.db
