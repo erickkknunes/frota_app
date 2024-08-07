@@ -1,8 +1,32 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli) and [without Expo](https://reactnative.dev/docs/getting-started-without-a-framework).
+
+- Dependencies:
+  - `react-native-vector-icons`
+  - `react-native-screens`
+  - `react-native-safe-area-context`
+  - `react-native-gesture-handler`
+  - `@react-navigation/native`
+  - `@react-navigation/stack`
+  - `@types/react-native-vector-icons`
+
+Dependencies were installed with `yarn add`.
+
+After installing the dependencies, add into android config folder (`android/app/build.gradle`) this line for use icons library:
+
+- `apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")`
+
+Now clean and rebuild the project:
+
+```bash
+cd android
+./gradlew clean
+cd ..
+yarn android
+```
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+>**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/set-up-your-environment) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
 
@@ -46,34 +70,27 @@ If everything is set up _correctly_, you should see your new app running in your
 
 This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-## Step 3: Modifying your App
+---
 
-Now that you have successfully run the app, let's modify it.
+# Update Assets:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+`npx react-native-asset`
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+---
 
-## Congratulations! :tada:
+# List AVDs:
 
-You've successfully run and modified your React Native App. :partying_face:
+`emulator -list-avds`
 
-### Now what?
+# Starting the AVD:
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+`emulator -avd AVD_NAME`
+`emulator -avd Pixel_3_API_30`
 
-# Troubleshooting
+# Additional Options:
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+`emulator -avd AVD_NAME -wipe-data`
+`emulator -avd AVD_NAME -skin 1080x1920`
+`emulator -avd AVD_NAME -debug`
 
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+---
